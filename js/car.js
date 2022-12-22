@@ -344,7 +344,6 @@ document.addEventListener("keydown", (event) => {
 })
 let blink
 document.addEventListener("keydown", (event) => {
-    console.log('1', turnSignals.getToggleOnOf());
     if (event.key === "a" && turnSignals.getToggleOnOf() === false || event.key === "ф" && turnSignals.getToggleOnOf() === false) {
         turnSignals.toggleLeft()
         blink = setInterval(() => leftSignal.classList.toggle("left-signal-active"), 500)
