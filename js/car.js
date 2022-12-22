@@ -342,30 +342,32 @@ document.addEventListener("keydown", (event) => {
         // console.log(driveBrake)
     }
 })
-
+let blink
 document.addEventListener("keydown", (event) => {
-    // let blink = null
-    if (event.key === "a" || event.key === "ф" && turnSignals.getToggleOnOf() === false) {
-
+    console.log('1', turnSignals.getToggleOnOf());
+    if (event.key === "a" && turnSignals.getToggleOnOf() === false || event.key === "ф" && turnSignals.getToggleOnOf() === false) {
         turnSignals.toggleLeft()
         blink = setInterval(() => leftSignal.classList.toggle("left-signal-active"), 500)
+        turnSignals.setToggleOnOf(true)
         // car.toggleTurnSignal()
+        // console.log(turnSignals.getToggleOnOf());
 
-    } else if (turnSignals.getToggleOnOf() === true && event.key === "q" || event.key === "й") {
+    } else if (turnSignals.getToggleOnOf() === true && event.key === "a" || turnSignals.getToggleOnOf() === true && event.key === "ф") {
         clearInterval(blink);
         turnSignals.toggleLeft()
         turnSignals.setToggleOnOf(false)
-        console.log('turnSignals.getToggleOnOf(): ', turnSignals.getToggleOnOf());
-        console.log('clearInterval(blink): ', clearInterval(blink));
+        // console.log('turnSignals.getToggleOnOf(): ', turnSignals.getToggleOnOf());
+        // console.log('clearInterval(blink): ', clearInterval(blink));
     }
 
-    if (event.key === "d" || event.key === "в") {
+    if (event.key === "d" && turnSignals.getToggleOnOf() === false || event.key === "в" && turnSignals.getToggleOnOf() === false) {
         turnSignals.toggleRight()
         blink = setInterval(() => rightSignal.classList.toggle("right-signal-active"), 500)
+        turnSignals.setToggleOnOf(true)
         // car.toggleLights()
         // console.log(toggleLeft.classList);
 
-    } else if (turnSignals.getToggleOnOf() === true && event.key === "e" || event.key === "у") {
+    } else if (turnSignals.getToggleOnOf() === true && event.key === "d" || turnSignals.getToggleOnOf() === true && event.key === "в") {
         clearInterval(blink)
         turnSignals.toggleRight()
         turnSignals.setToggleOnOf(false)
