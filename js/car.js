@@ -12,9 +12,9 @@ class Car {
     toggleLights() {
         this.headlightsBtn.toggleOnOf()
     }
-    // toggleTurnSignal() {
-    //     this.turnSignalBtn.toggleLeft()
-    // }
+    toggleTurnSignal() {
+        this.turnSignalBtn.toggleLeft()
+    }
 }
 class StartBtn {
     constructor(engine) {
@@ -346,7 +346,7 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("keydown", (event) => {
     // let blink = null
     if (event.key === "a" || event.key === "ф" && turnSignals.getToggleOnOf() === false) {
-        // console.log('turnSignals.getToggleOnOf(): ', turnSignals.getToggleOnOf());
+
         turnSignals.toggleLeft()
         blink = setInterval(() => leftSignal.classList.toggle("left-signal-active"), 500)
         // car.toggleTurnSignal()
