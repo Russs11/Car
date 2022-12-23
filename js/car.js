@@ -273,6 +273,7 @@ const wheelsArrView = document.querySelectorAll('.wheel')
 // setTimeout(() => {
 //     w3.turnWheelRight()    
 // }, 2000)
+const machine = document.querySelector('.machine')
 const leftSignal = document.querySelector('.left-signal')
 const rightSignal = document.querySelector('.right-signal')
 const stearingWheelView = document.querySelector('.stearing-wheel')
@@ -312,8 +313,10 @@ document.addEventListener("keydown", (event) => {
     console.log({ event });
 
     if (event.key === "ArrowRight") {
-        stearingWheelView.style.transform = 'rotate(' + 45 + 'deg)';
+        stearingWheelView.style.transform = 'rotate(' + 35 + 'deg)';
         stearWheel.stearingWheelTurn("Right")
+        machine.style.marginLeft = '600px'
+        machine.style.transform = 'rotate(' + 20 + 'deg)'
         wheelsArrView[0].classList.remove("wheel-left")
         wheelsArrView[1].classList.remove("wheel-left")
         wheelsArrView[0].classList.add("wheel-right")
@@ -324,7 +327,9 @@ document.addEventListener("keydown", (event) => {
 
     }
     if (event.key === "ArrowLeft") {
-        stearingWheelView.style.transform = 'rotate(' + (-45) + 'deg)';
+        stearingWheelView.style.transform = 'rotate(' + (-35) + 'deg)';
+        machine.style.transform = 'rotate(' + (-20) + 'deg)';
+        machine.style.marginRight = '600px'
         stearWheel.stearingWheelTurn("Left")
         wheelsArrView[0].classList.remove("wheel-right")
         wheelsArrView[1].classList.remove("wheel-right")
@@ -375,6 +380,8 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("keyup", (event) => {
     if (event.key === "ArrowRight") {
         stearingWheelView.style.transform = 'rotate(' + 0 + 'deg)';
+        machine.style.transform = 'rotate(' + 0 + 'deg)'
+        machine.style.marginRight = '0'
         stearWheel.stearingWheelTurn(null)
         wheelsArrView[0].classList.remove("wheel-left")
         wheelsArrView[1].classList.remove("wheel-left")
@@ -385,6 +392,8 @@ document.addEventListener("keyup", (event) => {
     }
     if (event.key === "ArrowLeft") {
         stearingWheelView.style.transform = 'rotate(' + 0 + 'deg)';
+        machine.style.transform = 'rotate(' + 0 + 'deg)'
+        machine.style.marginLeft = '0'
         stearWheel.stearingWheelTurn(null)
         wheelsArrView[0].classList.remove("wheel-left")
         wheelsArrView[1].classList.remove("wheel-left")

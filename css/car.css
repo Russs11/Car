@@ -14,11 +14,12 @@ body {
     justify-content: center;
     align-items: center;
     background: rgb(163, 162, 162);
+    overflow: hidden;
 }
 .machine {
-    margin-top: 100px;
+    margin-top: 200px;
     display: flex;
-   
+
     flex-direction: column;
     align-items: center;
     width: 150px;
@@ -26,8 +27,16 @@ body {
     background-color: rgb(82, 163, 101);
     border-radius: 10px;
     box-shadow: 5px 5px 20px rgb(66, 66, 66);
-    /* transform: rotate(20deg); */
+    transition: all 1.5s;
 }
+.machine-rigth {
+    transform: rotate(30deg);
+    
+}
+.machine-left {
+    transform: rotate(-30deg);
+}
+
 .lights-wrapper {
     display: flex;
     justify-content: space-between;
@@ -35,21 +44,21 @@ body {
     height: 15px;
     margin: 2px;
 }
-.left-signal, .right-signal {
+.left-signal,
+.right-signal {
     display: flex;
     width: 15px;
     height: 10px;
     border-radius: 3px;
     background-color: rgb(205, 207, 206);
-    
 }
-.left-signal-active{
-background-color: orange;
-box-shadow: -50px -8px 80px 50px orange
+.left-signal-active {
+    background-color: orange;
+    box-shadow: -50px -8px 80px 50px orange;
 }
-.right-signal-active{
-background-color: orange;
-box-shadow: 50px 8px 80px 50px orange
+.right-signal-active {
+    background-color: orange;
+    box-shadow: 50px 8px 80px 50px orange;
 }
 .lights1,
 .lights2 {
@@ -85,7 +94,6 @@ box-shadow: 50px 8px 80px 50px orange
     transform: rotate(-45deg);
 }
 .engine {
-   
     display: flex;
     width: 50px;
     height: 70px;
@@ -93,7 +101,6 @@ box-shadow: 50px 8px 80px 50px orange
     border-radius: 5px;
 }
 .engine-active {
-   
     background-color: red;
 }
 .rear {
@@ -104,7 +111,7 @@ box-shadow: 50px 8px 80px 50px orange
     height: 50px;
 }
 .dashboard {
-    margin-top: 100px;
+    margin-top: 200px;
     display: flex;
     justify-content: space-around;
     align-items: center;
