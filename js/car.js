@@ -324,7 +324,7 @@ document.addEventListener("keydown", (event) => {
 
     }
     if (event.key === "ArrowRight" && engine.getEngineState() === true) {
-        machine.style.marginLeft = '600px'
+        machine.style.marginLeft = '700px'
         machine.style.transform = 'rotate(' + 20 + 'deg)'
     }
 
@@ -342,7 +342,7 @@ document.addEventListener("keydown", (event) => {
     }
     if (event.key === "ArrowLeft" && engine.getEngineState() === true) {
         machine.style.transform = 'rotate(' + (-20) + 'deg)';
-        machine.style.marginRight = '600px'
+        machine.style.marginRight = '700px'
     }
 
     if (event.key === "w" || event.key === "ц") {
