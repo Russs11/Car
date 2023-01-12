@@ -294,7 +294,7 @@ const turnSignals = new TurnSignals(leftSignal, rightSignal)
 const lightBtn = new HeadLightsBtn(headlights)
 const car = new Car("", btn, lightBtn,)
 const stearWheel = new StearingWheel(wheels)
-
+let blink
 
 toggleLights.addEventListener("click", () => {
     // console.log("клик");
@@ -341,8 +341,8 @@ document.addEventListener("keydown", (event) => {
         // console.log("колеса повернули налево", stearWheel)
     }
     if (event.key === "ArrowLeft" && engine.getEngineState() === true) {
-        machine.style.transform = 'rotate(' + (-20) + 'deg)';
-        machine.style.marginRight = '700px'
+        machine.style.transform = 'rotate(' + (-20) + 'deg)' 
+        machine.style.transform = 'translate(' + (-300) + 'px)';
     }
 
     if (event.key === "w" || event.key === "ц") {
@@ -353,9 +353,6 @@ document.addEventListener("keydown", (event) => {
         driveBrake.DriveBrake("Brake")
         // console.log(driveBrake)
     }
-})
-let blink
-document.addEventListener("keydown", (event) => {
     if (event.key === "a" && turnSignals.getToggleOnOf() === false || event.key === "ф" && turnSignals.getToggleOnOf() === false) {
         turnSignals.toggleLeft()
         blink = setInterval(() => leftSignal.classList.toggle("left-signal-active"), 500)
@@ -383,7 +380,11 @@ document.addEventListener("keydown", (event) => {
         turnSignals.toggleRight()
         turnSignals.setToggleOnOf(false)
     }
+
 })
+
+
+   
 document.addEventListener("keyup", (event) => {
     if (event.key === "ArrowRight") {
         stearingWheelView.style.transform = 'rotate(' + 0 + 'deg)';
